@@ -1,6 +1,7 @@
 # Using discrete systems to exhaustively characterize the dynamics of an integrated ecosystem: implementation and models
 
 > Authors: Cédric Gaucherel, Franck Pommereau
+>
 > Journal: Methods in Ecology and Evolution
 
 ## Content
