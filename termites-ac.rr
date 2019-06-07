@@ -1,3 +1,7 @@
+# (C) 2019 Cédric Gaucherel <cedric.gaucherel@cirad.fr> d
+#          Franck Pommereau <franck.pommereau@univ-evry.fr>
+# Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
 inhabitants:
     Rp+: reproductives   # the queen, the king, the eggs and the nymphs
     Wk-: workers         # all termites able to work: the larvaes,
@@ -24,38 +28,38 @@ competitors:
 
 rules:
     # the workers and the fungi are consuming wood and air
-    [cons] Wk+, Te+ >> Wd-, Ai-
+    Wk+, Te+ >> Wd-, Ai-
     # the fungi need the fungal gardens in order to survive
-    [depl] Fg- >> Te-
+    Fg- >> Te-
     # the workers are foraging in the soil for wood and fungus. From
     # the soil, the workers are building the fungal gardens, the egg
     # chambers, and the mount
-    [prod] Wk+, Sl+ >> Wd+, Te+, Fg+, Ec+, Md+
+    Wk+, Sl+ >> Wd+, Te+, Fg+, Ec+, Md+
     # the workers and the fungus need to eat wood to survive
-    [depl] Wd- >> Wk-, Te-
+    Wd- >> Wk-, Te-
     # for the soil, the queen and the king can also build egg rooms
-    [prod] Rp+, Sl+ >> Ec+
+    Rp+, Sl+ >> Ec+
     # in the egg chambers, the queen and the king are producing eggs
     # that are becoming workers
-    [prod] Rp+, Ec+ >> Wk+
+    Rp+, Ec+ >> Wk+
     # eating some wood, the larvae are metamorphosing into soldiers
     # and/or nymphae
-    [prod] Wk+, Wd+ >> Sd+, Rp+
+    Wk+, Wd+ >> Sd+, Rp+
     # the air of the nest is being refreshed by passing through the
     # mound and exchanging with the atmosphere
-    [prod] Md+, At+ >> Ai+
+    Md+, At+ >> Ai+
     # the soldiers cannot survive without the workers to feed them,
     # and the fungal gardens need some maintainance by the workers
-    [depl] Wk- >> Fg-, Sd-
+    Wk- >> Fg-, Sd-
     # the egg chambers need some maintainance by the workers or the
     # reproductives, otherwise they collapse
-    [depl] Wk-, Rp- >> Ec-
+    Wk-, Rp- >> Ec-
     # the soldiers are killing ant competitors intruding into the
     # colony
-    [cons] Sd+ >> Ac-
+    Sd+ >> Ac-
     # without the soldiers, the ant competitors are invading the
     # colony and killing the workers and the reproductives
-    [depl] Ac+, Sd- >> Wk-, Rp-
+    Ac+, Sd- >> Wk-, Rp-
     # the reproductives, the workers and the fungus need to breathe
     # the air of the nest to survive
-    [depl] Ai- >> Rp-, Wk-, Te-
+    Ai- >> Rp-, Wk-, Te-
